@@ -24,7 +24,10 @@
     "autoload": {
         "psr-4": {
             "OneToMany\\OAuth2\\Intuit\\": "src/"
-        }
+        },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
