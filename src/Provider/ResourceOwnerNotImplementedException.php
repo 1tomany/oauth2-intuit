@@ -1,13 +1,13 @@
 <?php
 
-namespace OneToMany\OAuth2\Provider;
+namespace OneToMany\OAuth2\Intuit\Provider;
 
 class ResourceOwnerNotImplementedException extends \RuntimeException
 {
 
     public function __construct()
     {
-        parent::__construct("Intuit's OAuth 2.0 implementation does not support fetching the resource owner.");
+        parent::__construct('Intuit does not support fetching the resource owner.');
     }
 
 }
