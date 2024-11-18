@@ -10,6 +10,19 @@ use PHPUnit\Framework\TestCase;
 final class IntuitTest extends TestCase
 {
 
+    public function testGettingDefaultScopes(): void
+    {
+        $scopes = ['com.intuit.quickbooks.accounting'];
+
+        $provider = new Intuit();
+
+        $method = new \ReflectionMethod(
+            $provider, 'getDefaultScopes'
+        );
+
+        $this->assertSame($scopes, $method->invoke($provider));
+    }
+
     public function testCreatingResourceOwnerIsNotImplemented(): void
     {
         $this->expectException(ResourceOwnerNotImplementedException::class);
