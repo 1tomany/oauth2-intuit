@@ -36,7 +36,7 @@ class Provider extends AbstractProvider
 
     protected function checkResponse(ResponseInterface $response, $data): void
     {
-        if (!isset($data['error'], $data['error_description'])) {
+        if (isset($data['error'], $data['error_description'])) {
             throw new IdentityProviderException($data['error_description'], $response->getStatusCode(), $response);
         }
     }
