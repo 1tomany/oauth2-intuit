@@ -1,6 +1,6 @@
 <?php
 
-namespace OneToMany\OAuth2\Intuit;
+namespace OneToMany\OAuth2\Provider;
 
 use League\OAuth2\Client\Provider\AbstractProvider;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
@@ -9,7 +9,7 @@ use League\OAuth2\Client\Token\AccessToken;
 use League\OAuth2\Client\Tool\BearerAuthorizationTrait;
 use Psr\Http\Message\ResponseInterface;
 
-class Provider extends AbstractProvider
+class Intuit extends AbstractProvider
 {
 
     use BearerAuthorizationTrait;
@@ -41,9 +41,9 @@ class Provider extends AbstractProvider
         }
     }
 
-    protected function createResourceOwner(array $response, AccessToken $token): GenericResourceOwner
+    protected function createResourceOwner(array $response, AccessToken $token): never
     {
-        return new GenericResourceOwner($response, 'id');
+        throw new ResourceOwnerNotImplementedException();
     }
 
 }
