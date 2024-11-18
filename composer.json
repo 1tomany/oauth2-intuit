@@ -2,22 +2,33 @@
     "name": "1tomany/oauth2-intuit",
     "description": "Intuit OAuth2 provider for The PHP League OAuth2 Client package.",
     "type": "library",
-    "require": {
-        "league/oauth2-client": "^2.7"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^11.4"
-    },
     "license": "MIT",
-    "autoload": {
-        "psr-4": {
-            "1tomany\\Oauth2Intuit\\": "src/"
-        }
-    },
     "authors": [
         {
             "name": "Vic Cherubini",
             "email": "vic@1tomany.com"
         }
-    ]
+    ],
+    "keywords": [
+        "oauth2",
+        "intuit",
+        "quickbooks"
+    ],
+    "require": {
+        "php": ">=8.3",
+        "league/oauth2-client": "^2.7"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^11.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "OneToMany\\OAuth2\\Intuit\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OneToMany\\OAuth2\\Intuit\\Tests\\": "tests/"
+        }
+    }
 }
