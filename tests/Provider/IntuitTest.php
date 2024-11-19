@@ -1,10 +1,9 @@
 <?php
 
-namespace OneToMany\OAuth2\Intuit\Tests\Provider;
+namespace OneToMany\OAuth2\Client\Tests\Provider;
 
 use League\OAuth2\Client\Token\AccessToken;
-use OneToMany\OAuth2\Intuit\Provider\Intuit;
-use OneToMany\OAuth2\Intuit\Provider\ResourceOwnerNotImplementedException;
+use OneToMany\OAuth2\Client\Provider\Intuit;
 use PHPUnit\Framework\TestCase;
 
 final class IntuitTest extends TestCase
@@ -25,7 +24,8 @@ final class IntuitTest extends TestCase
 
     public function testCreatingResourceOwnerIsNotImplemented(): void
     {
-        $this->expectException(ResourceOwnerNotImplementedException::class);
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage('Unsupported by Intuit.');
 
         $accessToken = new AccessToken([
             'access_token' => 'fake-token'

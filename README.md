@@ -13,7 +13,7 @@ composer require 1tomany/oauth2-intuit
 ## Usage
 
 ```php
-$provider = new OneToMany\OAuth2\Provider\Intuit([
+$provider = new OneToMany\OAuth2\Client\Provider\Intuit([
     'clientId' => 'intuit-client-id',
     'clientSecret' => 'intuit-client-secret',
     'redirectUri' => 'https://example.com/oauth/connect'
