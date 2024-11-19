@@ -12,10 +12,10 @@ composer require 1tomany/oauth2-intuit
 
 ## Usage
 
-Usage is the similar as [The PHP League's OAuth `GenericProvider`](https://oauth2-client.thephpleague.com/usage/), using `\OneToMany\OAuth2\Client\Provider\Intuit` as the provider.
+Usage is the similar to [The PHP League's OAuth 2.0 Client](https://oauth2-client.thephpleague.com/usage/), using `\OneToMany\OAuth2\Client\Provider\Intuit` as the provider.
 
 ```php
-$provider = new OneToMany\OAuth2\Client\Provider\Intuit([
+$provider = new \OneToMany\OAuth2\Client\Provider\Intuit([
     'clientId' => 'intuit-client-id',
     'clientSecret' => 'intuit-client-secret',
     'redirectUri' => 'https://example.com/oauth/connect'
