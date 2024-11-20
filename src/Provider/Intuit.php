@@ -39,13 +39,18 @@ class Intuit extends AbstractProvider
         return ['com.intuit.quickbooks.accounting'];
     }
 
+    protected function getScopeSeparator(): string
+    {
+        return ' ';
+    }
+
     /**
      * @param  array<string, string> $data
      */
     protected function checkResponse(ResponseInterface $response, $data): void
     {
-        if (isset($data['error'], $data['error_description'])) {
-            throw new IdentityProviderException($data['error_description'], $response->getStatusCode(), $response);
+        if (isset($data['error'])) {
+            throw new IdentityProviderException($data['error_description'] ?? $data['error'], $response->getStatusCode(), $response);
         }
     }
 
